@@ -1,27 +1,28 @@
-package com.phatlaptrinh.ShopLapTrinh.controller;
+package com.phatlaptrinh.ShopLapTrinh.controller.web;
 
 import com.phatlaptrinh.ShopLapTrinh.dto.UserDTO;
 import com.phatlaptrinh.ShopLapTrinh.service.LoginService;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.*;
-
-@Controller
-public class HelloController {
+@Controller(value = "homeControllerOfUser")
+public class HomeController {
 
     private LoginService loginService = new LoginService();
     @RequestMapping(value = "/", method = RequestMethod.GET)
-
-    public ModelAndView hello()
+    public ModelAndView homePage()
     {
-        ModelAndView mav = new ModelAndView("hello");
-        mav.addObject("model", "Test model Phatlaptrinh deeptrai!");
+        ModelAndView mav = new ModelAndView("web/home");
+        return mav;
+    }
+    @RequestMapping(value = "/san-pham", method = RequestMethod.GET)
+    public ModelAndView productPage()
+    {
+        ModelAndView mav = new ModelAndView("web/product");
         return mav;
     }
     @RequestMapping(value = "/login", method = RequestMethod.GET)

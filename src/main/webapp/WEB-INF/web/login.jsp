@@ -7,6 +7,7 @@
     <title>Trang đăng nhập</title>
 </head>
 <body>
+
 <form:form action="login" method="post" modelAttribute="model">
     <p>${model}</p>
     <p>
